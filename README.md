@@ -22,19 +22,26 @@ cd chat-project
 composer install
 ```
 
-3. Create a new database named 'chatProject_db' in MySQL or MariaDB.
+3. Create a copy of the .env.example file and rename it to .env.
 
-4. Run the database migrations:
+4. Generate a new application key:
+```
+php artisan key:generate
+```
+
+5. Create a new database named 'chatProject_db' in MySQL or MariaDB, and link the project with the db.
+
+6. Run the database migrations:
 ```cmd
 php artisan migrate
 ```
 
-5. Create The encryption keys needed to generate secure access tokens, create “personal access” and “password grant” clients which will be used to generate access tokens:
+7. Create The encryption keys needed to generate secure access tokens, create “personal access” and “password grant” clients which will be used to generate access tokens:
 ```cmd
 php artisan passport:install
 ```
 
-6. Start the development server:
+8. Start the development server:
 ```cmd
 php artisan serve
 ```
