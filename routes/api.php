@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\MessageController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +20,5 @@ use App\Http\Controllers\AuthController;
 Route::post('/signup', [AuthController::class, 'signUp']);
 Route::post('/login', [AuthController::class, 'logIn']);
 Route::get('/logout', [AuthController::class, 'logOut'])->middleware('auth:api');
+Route::post('/chat/sendMessage',  [MessageController::class, 'sendMessage'])->middleware('auth:api');
+Route::post('/chat/getConversation',  [MessageController::class, 'getConversation'])->middleware('auth:api');

@@ -32,17 +32,17 @@ php artisan key:generate
 5. Create a new database named 'chatProject_db' in MySQL or MariaDB, and link the project with the db.
 
 6. Run the database migrations:
-```cmd
+```
 php artisan migrate
 ```
 
 7. Create The encryption keys needed to generate secure access tokens, create “personal access” and “password grant” clients which will be used to generate access tokens:
-```cmd
+```
 php artisan passport:install
 ```
 
 8. Start the development server:
-```cmd
+```
 php artisan serve
 ```
 
